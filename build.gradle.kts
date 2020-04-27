@@ -1,4 +1,5 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import org.jetbrains.kotlin.ir.builders.declarations.buildClass
 
 plugins {
     id("com.android.application") version BuildPluginsVersion.AGP apply false
@@ -15,6 +16,17 @@ allprojects {
         google()
         mavenCentral()
         jcenter()
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath(Navigation.SAFE_ARGS)
     }
 }
 
